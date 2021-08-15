@@ -1,7 +1,7 @@
 # Site settings
 title: Jay Prakash
 description: Jekyll Theme Minimal Resume
-baseurl: "/devfolio" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://drdjango.ml" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
