@@ -1,9 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CustomIcon extends StatefulWidget {
   IconData icon = Icons.mail_rounded;
-  CustomIcon({Key? key, required this.icon}) : super(key: key);
+  String url;
+  CustomIcon({Key? key, required this.icon, required this.url})
+      : super(key: key);
   @override
   State<CustomIcon> createState() => _CustomIconState();
 }
@@ -23,8 +25,13 @@ class _CustomIconState extends State<CustomIcon> {
             ),
             shape: BoxShape.circle,
             color: (hover) ? Colors.white : Colors.transparent),
-        child: Icon(widget.icon,
-            size: 30, color: (hover) ? Colors.black : Colors.white),
+        child: IconButton(
+          icon: Icon(widget.icon,
+              size: 30, color: (hover) ? Colors.black : Colors.white),
+          onPressed: () {
+            launch(widget.url);
+          },
+        ),
       ),
       onTap: () {},
       onHover: (val) {
@@ -34,14 +41,4 @@ class _CustomIconState extends State<CustomIcon> {
       },
     );
   }
-}
-
-BoxDecoration myBoxDecoration(Color color, double width, BoxShape shape) {
-  return BoxDecoration(
-      border: Border.all(
-        color: color, //                   <--- border color
-        width: 5.0,
-      ),
-      shape: shape,
-      color: Colors.white);
 }
