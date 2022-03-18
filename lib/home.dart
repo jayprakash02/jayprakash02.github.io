@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/social.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
-  static const IconData mail = IconData(0xe3c3, fontFamily: 'MaterialIcons');
+class Home extends StatefulWidget {
+  bool mobile;
 
+  Home({Key? key, required this.mobile}) : super(key: key);
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,14 +20,20 @@ class Home extends StatelessWidget {
           Text(
             "Jay Prakash",
             style: TextStyle(
-                fontSize: 100, color: Colors.white, fontFamily: 'Montserrat'),
+                fontSize: (widget.mobile) ? 70 : 100,
+                color: Colors.white,
+                fontFamily: 'Montserrat'),
           ),
           Text(
             "Django Developer",
             style: TextStyle(
-                fontSize: 50, color: Colors.white, fontFamily: 'OpenSans'),
+                fontSize: (widget.mobile) ? 30 : 50,
+                color: Colors.white,
+                fontFamily: 'OpenSans'),
           ),
-          SocialIcon()
+          SocialIcon(
+            mobile: widget.mobile,
+          )
         ],
       ),
     );
