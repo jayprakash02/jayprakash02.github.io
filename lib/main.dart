@@ -1,54 +1,50 @@
-import 'package:flutter/cupertino.dart';
+import 'package:JayPrakash/particle.dart';
+import 'package:JayPrakash/responsive.dart';
+import 'package:JayPrakash/responsive/desktop.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:untitled/drawer.dart';
-import 'package:untitled/home.dart';
-import 'package:untitled/particle.dart';
-import 'package:untitled/responsive.dart';
+
+import 'home.dart';
 
 void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key, appTitle}) : super(key: key);
   static const appTitle = 'Jay Prakash';
-
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
-      home: ResponsiveLayout(
-          mobileScreenLayout: MobilePage(title: appTitle),
-          webScreenLayout: DesktopPage(title: appTitle)),
-    );
-  }
+  State<MyApp> createState() => _MyAppState();
 }
 
-class DesktopPage extends StatelessWidget {
-  const DesktopPage({Key? key, required this.title}) : super(key: key);
+class _MyAppState extends State<MyApp> {
+  get appTitle => MyApp.appTitle;
+  bool _isLoading = false;
 
-  final String title;
+  @override
+  void initState() {
+    super.initState();
+    dataLoadFunction(); // this function gets called
+  }
+
+  dataLoadFunction() async {
+    setState(() {
+      _isLoading = true; // your loader has started to load
+    });
+    // fetch you data over here
+    setState(() {
+      _isLoading = false; // your loder will stop to finish after the data fetch
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      backgroundColor: const Color.fromRGBO(26, 34, 44, 1),
-      body: Stack(
-        children: [
-          Positioned.fill(child: CircularParticleScreen()),
-          Positioned(
-              child: Home(
-            mobile: false,
-          ))
-        ],
-      ),
-      endDrawer: const Drawer(
-        child: CustomDrawer(),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: appTitle,
+      home: _isLoading == true
+          ? CircularProgressIndicator()
+          : ResponsiveLayout(
+              mobileScreenLayout: MobilePage(title: appTitle),
+              webScreenLayout: DesktopPage(title: appTitle)),
     );
   }
 }

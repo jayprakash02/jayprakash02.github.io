@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/social.dart';
+
+import 'social.dart';
 
 class Home extends StatefulWidget {
   bool mobile;

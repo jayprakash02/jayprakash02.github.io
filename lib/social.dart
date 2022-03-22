@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:untitled/soical_icon.dart';
+
+import 'soical_icon.dart';
 
 class SocialIcon extends StatelessWidget {
   bool mobile = false;
@@ -29,7 +30,7 @@ class SocialIcon extends StatelessWidget {
                   ),
                   CustomIcon(
                     icon: FontAwesomeIcons.linkedinIn,
-                    url: "https://linkedin.com/in/jay-prakash=002",
+                    url: "https://linkedin.com/in/jay-prakash-002",
                   ),
                 ],
               )
@@ -54,7 +55,7 @@ class SocialIcon extends StatelessWidget {
                   ),
                   CustomIcon(
                     icon: FontAwesomeIcons.linkedinIn,
-                    url: "https://linkedin.com/in/jay-prakash=002",
+                    url: "https://linkedin.com/in/jay-prakash-002",
                   ),
                 ],
               ));
