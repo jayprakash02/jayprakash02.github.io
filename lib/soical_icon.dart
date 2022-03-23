@@ -16,8 +16,9 @@ class _CustomIconState extends State<CustomIcon> {
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-        margin: EdgeInsets.only(left: 15),
-        padding: EdgeInsets.all((hover) ? 20 : 10),
+        alignment: Alignment.center,
+        margin: EdgeInsets.only(left: 20),
+        padding: EdgeInsets.all((hover) ? 15 : 10),
         decoration: BoxDecoration(
             border: Border.all(
               color: Colors.white, //                   <--- border color
@@ -28,12 +29,12 @@ class _CustomIconState extends State<CustomIcon> {
         child: IconButton(
           icon: Icon(widget.icon,
               size: 30, color: (hover) ? Colors.black : Colors.white),
-          onPressed: () {
-            launch(widget.url);
-          },
+          onPressed: () {},
         ),
       ),
-      onTap: () {},
+      onTap: () {
+        launch(widget.url);
+      },
       onHover: (val) {
         setState(() {
           hover = val;

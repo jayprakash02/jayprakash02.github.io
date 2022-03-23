@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'm_social_icon.dart';
 import 'soical_icon.dart';
 
 class SocialIcon extends StatelessWidget {
@@ -16,19 +17,19 @@ class SocialIcon extends StatelessWidget {
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomIcon(
+                  MCustomIcon(
                     icon: FontAwesomeIcons.envelope,
                     url: "mailto:name@email.com",
                   ),
-                  CustomIcon(
+                  MCustomIcon(
                     icon: FontAwesomeIcons.instagram,
                     url: "https://instagram.com/jay_prakash",
                   ),
-                  CustomIcon(
+                  MCustomIcon(
                     icon: FontAwesomeIcons.github,
                     url: "https://github.com/jayprakash02",
                   ),
-                  CustomIcon(
+                  MCustomIcon(
                     icon: FontAwesomeIcons.linkedinIn,
                     url: "https://linkedin.com/in/jay-prakash-002",
                   ),
@@ -47,7 +48,7 @@ class SocialIcon extends StatelessWidget {
                   ),
                   CustomIcon(
                     icon: FontAwesomeIcons.facebook,
-                    url: "https://facebook.com/jp.star",
+                    url: "https://facebook.com/jp.star.02",
                   ),
                   CustomIcon(
                     icon: FontAwesomeIcons.github,

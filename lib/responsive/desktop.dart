@@ -33,90 +33,85 @@ class _DesktopPageState extends State<DesktopPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
-        backgroundColor: const Color.fromRGBO(26, 34, 44, 1),
-        endDrawer: Drawer(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          child: ListView(
-            padding: EdgeInsets.only(top: 20),
-            children: [
-              Container(
-                margin: EdgeInsets.all(20),
-                // padding: EdgeInsets.all(),
-                height: 70,
-                child: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      Navigator.pop(context);
-                      widget.selected = 0;
-                    });
-                  },
-                  icon: Icon(
-                    FontAwesomeIcons.home,
-                    color: Colors.white,
-                    size: 70,
-                  ),
-                ),
+      backgroundColor: const Color.fromRGBO(26, 34, 44, 1),
+      body: _getDrawerContext(widget.selected),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            margin: EdgeInsets.all(20),
+            height: 50,
+            child: IconButton(
+              iconSize: 50,
+              onPressed: () {
+                setState(() {
+                  widget.selected = 0;
+                });
+              },
+              icon: Icon(
+                FontAwesomeIcons.home,
+                color: Colors.white,
+                size: 50,
               ),
-              Container(
-                height: 70,
-                margin: EdgeInsets.all(20),
-                child: IconButton(
-                  icon: Icon(
-                    FontAwesomeIcons.brain,
-                    color: Colors.white,
-                    size: 70,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      Navigator.pop(context);
-                      widget.selected = 2;
-                    });
-                  },
-                ),
-              ),
-              Container(
-                height: 70,
-                margin: EdgeInsets.all(20),
-                child: IconButton(
-                  icon: Icon(
-                    FontAwesomeIcons.medal,
-                    color: Colors.white,
-                    size: 70,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      Navigator.pop(context);
-                      widget.selected = 3;
-                    });
-                  },
-                ),
-              ),
-              Container(
-                height: 70,
-                margin: EdgeInsets.all(20),
-                child: IconButton(
-                  tooltip: 'Contacts',
-                  icon: Icon(
-                    FontAwesomeIcons.phone,
-                    color: Colors.white,
-                    size: 70,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      Navigator.pop(context);
-                      widget.selected = 4;
-                    });
-                  },
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
-        body: _getDrawerContext(widget.selected));
+          Container(
+            margin: EdgeInsets.all(20),
+            height: 50,
+            child: IconButton(
+              iconSize: 50,
+              icon: Icon(
+                FontAwesomeIcons.brain,
+                color: Colors.white,
+                size: 50,
+              ),
+              onPressed: () {
+                setState(() {
+                  widget.selected = 2;
+                });
+              },
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(20),
+            height: 50,
+            child: IconButton(
+              iconSize: 50,
+              icon: Icon(
+                FontAwesomeIcons.medal,
+                color: Colors.white,
+                size: 50,
+              ),
+              onPressed: () {
+                setState(() {
+                  widget.selected = 3;
+                });
+              },
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(20),
+            height: 50,
+            child: IconButton(
+              iconSize: 50,
+              tooltip: 'Contacts',
+              icon: Icon(
+                FontAwesomeIcons.phone,
+                color: Colors.white,
+                size: 50,
+              ),
+              onPressed: () {
+                setState(() {
+                  widget.selected = 4;
+                });
+              },
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
