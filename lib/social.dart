@@ -19,7 +19,7 @@ class SocialIcon extends StatelessWidget {
                 children: [
                   MCustomIcon(
                     icon: FontAwesomeIcons.envelope,
-                    url: "mailto:name@email.com",
+                    url: "mailto:unijay12@gmail.com",
                   ),
                   MCustomIcon(
                     icon: FontAwesomeIcons.instagram,
@@ -40,7 +40,7 @@ class SocialIcon extends StatelessWidget {
                 children: [
                   CustomIcon(
                     icon: FontAwesomeIcons.envelope,
-                    url: "mailto:name@email.com",
+                    url: "mailto:unijay12@gmail.com",
                   ),
                   CustomIcon(
                     icon: FontAwesomeIcons.instagram,
